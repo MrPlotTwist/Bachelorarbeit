@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  python-crawler:
+    build:
+      context: ./PythonCrawler
+    container_name: python-crawler
+    ports:
+      - "8000:8000"
+    depends_on:
+      - juice-shop
+    volumes:
+      - database_volume:/app/data
+    environment:
+      DB_PATH: /app/data/crawler.db
+      REPORTS_PATH: /app/data/security-reports
+    env_file:
+      - ./PythonCrawler/app/ai_integration/.env
+
+  frontend:
+    build:
+      context: ./PythonCrawler/frontend
+    container_name: frontend
+    ports:
+      - "3001:3000"
+    environment:
+      CRAWLER_API_URL: http://python-crawler:8000/crawler
+    depends_on:
+      - python-crawler
+
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: juice-shop
+    ports:
+      - "3000:3000"
+
+volumes:
+  database_volume:
