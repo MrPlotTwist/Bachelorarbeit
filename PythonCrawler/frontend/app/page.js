@@ -174,7 +174,7 @@ export default function HomePage() {
 
                 <details>
                   <summary>Headers anzeigen</summary>
-                  <pre style={{ background: "rgb(28, 49, 71)", padding: "12px", overflowX: "auto" }}>
+                  <pre style={{ padding: "12px", overflowX: "auto" }}>
                     {JSON.stringify(parsedHeaders ?? headersJson, null, 2)}
                   </pre>
                 </details>
@@ -193,7 +193,7 @@ export default function HomePage() {
 
                           <details>
                             <summary>Form anzeigen</summary>
-                            <pre style={{ background: "#000000", padding: "12px", overflowX: "auto" }}>
+                            <pre style={{ padding: "12px", overflowX: "auto" }}>
                               {JSON.stringify(parsedForm ?? form, null, 2)}
                             </pre>
                           </details>
