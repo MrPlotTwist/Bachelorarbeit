@@ -1,2 +1,2 @@
 # Bachelorarbeit
-Dieses öffentliche Repository ist im Kontext mit meiner Bachelorarbeit entstanden und enthält das gesamte Projekt. 
+Dieses öffentliche Repository ist im Kontext meiner Bachelorarbeit entstanden und enthält das gesamte Projekt.
